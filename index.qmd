@@ -215,7 +215,7 @@ The cost assessment is significant when deciding on the threshold in connection 
 # predikte ikke churne  |      FN      |      TN
 ```
 
-Customer acquisition \$200 (<https://www.reviewtrackers.com/blog/customer-acquisition-banking/#:~:text=How%20much%20does%20it%20cost%20a%20bank%20to,%2866%25%29%2C%20and%20SEO%20%2F%20pay-per-click%20%28PPC%29%20advertising%20%2865%25%29.)> - the cost for a false negative (FN) prediction That is, predicting that a customer is satisfied when in reality they churn. #Customer retention \$40 (Source: Bain & Company, "The Value of Online Customer Loyalty in Retail Banking," 2016.) - the cost of a false positive (FP) That is, predicting that a customer will churn when in reality the customer was satisfied, and a true positive (TP) that is, correctly predicting dissatisfied customers. Correctly predicted true negatives (TN) cost nothing. That is, correctly predicting that a customer is satisfied.
+Customer acquisition \$200 [Se documentation here](https://www.reviewtrackers.com/blog/customer-acquisition-banking/#:~:text=How%20much%20does%20it%20cost%20a%20bank%20to,%2866%25%29%2C%20and%20SEO%20%2F%20pay-per-click%20%28PPC%29%20advertising%20%2865%25%29.)){.uri} - the cost for a false negative (FN) prediction That is, predicting that a customer is satisfied when in reality they churn. #Customer retention \$40 (Source: Bain & Company, "The Value of Online Customer Loyalty in Retail Banking," 2016.) - the cost of a false positive (FP) That is, predicting that a customer will churn when in reality the customer was satisfied, and a true positive (TP) that is, correctly predicting dissatisfied customers. Correctly predicted true negatives (TN) cost nothing. That is, correctly predicting that a customer is satisfied.
 
 The situation until now is that the company assumes that no customers churn. Thus the model is that nobody churns. In other words, the company predicts a NO for every customer in the test dataset ,i.e., TP=FP=0. We only need to calculate FN (since TN does not cost anything) ourselves.
 
@@ -493,7 +493,7 @@ for (i in 1:length(thresh)) {
 
 ```
 
-After running the lda analysis we can compare the savings to the prior models
+After running the LDA analysis we can compare the savings to the prior models
 
 ```{r}
 #| code-fold: false
@@ -540,7 +540,7 @@ for (i in 1:length(thresh)) {
 
 ```
 
-After running the lda analysis we can compare the savings to the prior models
+After running the QDA analysis we can compare the savings to the prior models
 
 ```{r}
 #| code-fold: false
