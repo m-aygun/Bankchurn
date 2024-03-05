@@ -24,7 +24,7 @@ output: false
 code-wrap: true
 ---
 
-![churn rate assesment](churnbillede.jpg){fig-align="center"}
+![Churn rate assesment](churnbillede.jpg){fig-align="center"}
 
 # Introduction
 
@@ -560,7 +560,7 @@ After running the QDA analysis we can compare the savings to the prior models
 
 ## Evaluation
 
-We can now asses the performance of the models. Ss we can se we are able to save money by focusing on datadriven decisions.
+We can now asses the performance of the models. As we can see we are able to save money by focusing on data driven decisions.
 
 ## Deployment
 
