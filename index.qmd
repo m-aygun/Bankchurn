@@ -24,8 +24,6 @@ output: false
 code-wrap: true
 ---
 
-![](churnbillede.jpg){fig-align="center"}
-
 # Introduction
 
 This case focuses on customer churn (also known as customer attrition or customer turnover). Customer churn is interesting because it is usually much cheaper to retain existing customers than to acquire new ones. Instead of focusing on each individual customer, we will attempt to build a predictive model that can help us decide which customers we should focus our retention efforts on.
