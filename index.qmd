@@ -24,6 +24,8 @@ output: false
 code-wrap: true
 ---
 
+![Churn rates](churnbillede.jpg){fig-align="center"}
+
 # Introduction
 
 This case focuses on customer churn (also known as customer attrition or customer turnover). Customer churn is interesting because it is usually much cheaper to retain existing customers than to acquire new ones. Instead of focusing on each individual customer, we will attempt to build a predictive model that can help us decide which customers we should focus our retention efforts on.
@@ -91,7 +93,7 @@ datatable(bank_churn, caption = htmltools::tags$caption(
 
 ### Cleaning data
 
-First we are checking for missing values. There are no missing values in the TotalCharges variable. We are imputing thesevalues with the meanvalue, since the quantity is low. After this we are changes all the character class variables to factors for later statistical analysis. Finally the churndataset is again changes to a dataframe and the CustomerID variable is removed.
+First we are checking for missing values. There are no missing values in the TotalCharges variable. We are imputing thesevalues with the meanvalue, since the quantity is low. After this we are changes all the character class variables to factors for later statistical analysis. The data is normalised and finally the churndataset is again changes to a dataframe and the CustomerID variable is removed.
 
 ```{r}
 #| output: false
@@ -215,7 +217,7 @@ The cost assessment is significant when deciding on the threshold in connection 
 # predikte ikke churne  |      FN      |      TN
 ```
 
-Customer acquisition \$200 [Se documentation here](https://www.reviewtrackers.com/blog/customer-acquisition-banking/#:~:text=How%20much%20does%20it%20cost%20a%20bank%20to,%2866%25%29%2C%20and%20SEO%20%2F%20pay-per-click%20%28PPC%29%20advertising%20%2865%25%29.)){.uri} - the cost for a false negative (FN) prediction That is, predicting that a customer is satisfied when in reality they churn. #Customer retention \$40 (Source: Bain & Company, "The Value of Online Customer Loyalty in Retail Banking," 2016.) - the cost of a false positive (FP) That is, predicting that a customer will churn when in reality the customer was satisfied, and a true positive (TP) that is, correctly predicting dissatisfied customers. Correctly predicted true negatives (TN) cost nothing. That is, correctly predicting that a customer is satisfied.
+Customer acquisition \$200 [Se documentation here](https://www.reviewtrackers.com/blog/customer-acquisition-banking/#:~:text=How%20much%20does%20it%20cost%20a%20bank%20to,%2866%25%29%2C%20and%20SEO%20%2F%20pay-per-click%20%28PPC%29%20advertising%20%2865%25%29.)){.uri} - the cost for a false negative (FN) prediction That is, predicting that a customer is satisfied when in reality they churn. Customer retention \$40 (Source: Bain & Company, "The Value of Online Customer Loyalty in Retail Banking," 2016.) - the cost of a false positive (FP) That is, predicting that a customer will churn when in reality the customer was satisfied, and a true positive (TP) that is, correctly predicting dissatisfied customers. Correctly predicted true negatives (TN) cost nothing. That is, correctly predicting that a customer is satisfied.
 
 The situation until now is that the company assumes that no customers churn. Thus the model is that nobody churns. In other words, the company predicts a NO for every customer in the test dataset ,i.e., TP=FP=0. We only need to calculate FN (since TN does not cost anything) ourselves.
 
@@ -500,10 +502,14 @@ After running the LDA analysis we can compare the savings to the prior models
 #| output: true
 #| result: true
 
+#LDA analysis minimum costs minus logistic analysis minimum costs 
 10000*(min(omk_lda) - min(omk)) 
 
+
+#LDA analysis minimum costs minu simple model minimum costs 
 10000*(min(omk_lda) - omk_simple)
 
+#LDA analysis minimum costs minus own calculation costs
 10000*(min(omk_lda) - omkostninger_mavefornemmelse)
 ```
 
@@ -547,12 +553,17 @@ After running the QDA analysis we can compare the savings to the prior models
 #| output: true
 #| result: true
 
+
+#QDA analysis minimum costs minus logistic analysis minimum costs
 10000*(min(omk_qda) - min(omk)) 
 
+#QDA analysis minimum costs minus LDA minimums costs
 10000*(min(omk_qda) - min(omk_lda)) 
 
+#QDA analysis minimum costs minu simple model minimum costs
 10000*(min(omk_qda) - omk_simple)
 
+#QDA analysis minimum costs minus own calculation costs
 10000*(min(omk_qda) - omkostninger_mavefornemmelse)
 ```
 
@@ -571,7 +582,7 @@ TP_omk <- 80
 
 And run the code again.
 
-Furthermore nce models are trained and evaluated, they're deployed for real-world use. Here's how:
+Furthermore once models are trained and evaluated, they're deployed for real-world use. Here's how:
 
 1.  **Packaging**: Bundle the trained model with preprocessing steps for easy deployment.
 
