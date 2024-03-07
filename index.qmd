@@ -96,9 +96,6 @@ datatable(bank_churn, caption = htmltools::tags$caption(
 First we are checking for missing values. There are no missing values in the TotalCharges variable. We are imputing thesevalues with the meanvalue, since the quantity is low. After this we are changes all the character class variables to factors for later statistical analysis. The data is normalised and finally the churndataset is again changes to a dataframe and the CustomerID variable is removed.
 
 ```{r}
-#| output: false
-#| results: false
-
 
 # Beregn antallet af missing værdier i hver kolonne. No missing
 bank_churn %>% purrr::map(~ sum(is.na(.)))
@@ -252,10 +249,6 @@ In order to evalutate the relevant variables we will perform Lasso modelling
 
 ```{r}
 
-#| results: "hide"
-#| output: false
-
-
 bank_churn_lasso <- bank_churn
 
 bank_churn_lasso <- bank_churn_lasso %>% 
@@ -316,9 +309,9 @@ lasso.coef
 Based on the lassomodel, the following variables are relevant
 
 ```{r}
-
 #| output: true
 #| result: true
+
 
  
 lasso.coef[lasso.coef != 0]
@@ -405,8 +398,10 @@ omk_simple <- FN*FN_omk + TP*TP_omk + FP*FP_omk + TN*0
 We visualize the results to be able to see in a single way how much the costs depend on the thresholds.
 
 ```{r}
+#| code-fold: false
 #| output: true
 #| result: true
+
 
 
 model <- c(rep("optimized", 100), "simple")
@@ -418,6 +413,7 @@ thresh_plot <- c(thresh, 0.5)
 The visualization shows that the optimum threshold is 0,17.
 
 ```{r}
+#| code-fold: false
 #| output: true
 #| result: true
 
@@ -444,6 +440,9 @@ Note that we can find an optimum with a different threshold than 0.50.
 Calculates the saved costs of the optimized model (threshold=0.17) compared to the baseline model (threshold=0.5)."
 
 ```{r}
+#| output: true
+#| result: true
+
 
 besparelse_pr_kunde <- omk_simple - min(omk)
 
@@ -454,10 +453,13 @@ besparelse_pr_kunde*10000
 Calculates the saved costs of the optimized model (threshold=0.17) compared to one's own calculations."
 
 ```{r}
+#| output: true
+#| result: true
 
 
 
 besparelse_mavefornemmelse <- omkostninger_mavefornemmelse - min(omk)
+
 besparelse_mavefornemmelse*10000
 ```
 
@@ -506,7 +508,7 @@ After running the LDA analysis we can compare the savings to the prior models
 10000*(min(omk_lda) - min(omk)) 
 
 
-#LDA analysis minimum costs minu simple model minimum costs 
+#LDA analysis minimum costs minus simple model minimum costs 
 10000*(min(omk_lda) - omk_simple)
 
 #LDA analysis minimum costs minus own calculation costs
@@ -560,7 +562,7 @@ After running the QDA analysis we can compare the savings to the prior models
 #QDA analysis minimum costs minus LDA minimums costs
 10000*(min(omk_qda) - min(omk_lda)) 
 
-#QDA analysis minimum costs minu simple model minimum costs
+#QDA analysis minimum costs minus simple model minimum costs
 10000*(min(omk_qda) - omk_simple)
 
 #QDA analysis minimum costs minus own calculation costs
