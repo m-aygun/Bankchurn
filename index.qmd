@@ -413,7 +413,7 @@ thresh_plot <- c(thresh, 0.5)
 The visualization shows that the optimum threshold is 0,17.
 
 ```{r}
-#| code-fold: false
+#| code-fold: true
 #| output: true
 #| result: true
 
