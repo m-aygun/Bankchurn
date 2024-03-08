@@ -413,7 +413,6 @@ thresh_plot <- c(thresh, 0.5)
 The visualization shows that the optimum threshold is 0,17.
 
 ```{r}
-#| code-fold: true
 #| output: true
 #| result: true
 
@@ -465,7 +464,7 @@ besparelse_mavefornemmelse*10000
 
 We can clearly outperform the existing model that the company uses (which assumes no churn). We can also clearly outperform the common 50/50 split.
 
-Can we do even better with an alternative model: Let's use linear and quadratic discriminant analysis and qudratic discriminant analysis, and we calculate again the total cost savings, and compare them with the best logistic regression:
+Can we do even better with an alternative model: Let's use linear and quadratic discriminant analysis and qudratic discriminant analysis, and we calculate again the total cost savings, and compare them with the best logistic regression.
 
 #### Linear Discriminant Analysis (LDA)
 
