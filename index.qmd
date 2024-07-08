@@ -1381,7 +1381,7 @@ savings_matrix <- as.data.frame(savings_matrix)
 print(optimal)
 ```
 
-we can here determine that the simple model has a cost of 38. 34 in average per customer. The lowest cost is given by The Random Forrest model at 21.90 at at threshold
+we can here determine that the simple model has a cost of 38. 34 in average per customer. The lowest cost is given by The Random Forrest model at 21.90 at at threshold 0.24
 
 After comparing the 6 models, we can compare the costs, and calculate the savings per customer and in total.
 
