@@ -3,7 +3,7 @@ title: "Churn Case"
 description: Prediction of bankcustomers churn rate
 date: today # other options: now, last-modified
 author:
-  - name: Mette
+  - name: Mette Aygün
     affiliation: Erhvervsakademi Dania
 title-block-banner: true 
 format:
@@ -29,7 +29,7 @@ code-wrap: true
 
 # Introduction
 
-This case focuses on customer churn (also known as customer attrition or customer turnover). Customer churn is interesting because it is usually much cheaper to retain existing customers than to acquire new ones. Instead of focusing on each individual customer, we will attempt to build a predictive model that can help us decide which customers we should focus our retention efforts on.
+This case focuses on customer churn (also known as customer attrition or customer turnover). Customer churn is interesting because it is usually much cheaper to retain existing customers than to acquire new ones. Instead of focusing on each individual customer, we will attempt to build a predictive model that can help us decide which customers we should focus our retention efforts on. The dataset has been downloaded from <https://www.kaggle.com/datasets/santoshd3/bank-customers>, and is free to use.
 
 # Analysis
 
